@@ -48,5 +48,5 @@ pip install -i https://test.pypi.org/simple/ ecoassocnetwork
 ## Tutorials
 <p>
 - To run the model from a Python environment: see <a href=./doc/Pytutorial/md/tutorial.md> Pytutorial </a> </br>
-- To run the model from R: see <a href=./doc/Rtutorial/tutorial_R.rmd> Rtutorial </a> 
+- To run the model from R: see <a href=./doc/Rtutorial/tutorial_R.Rmd> Rtutorial </a> 
 </p>
