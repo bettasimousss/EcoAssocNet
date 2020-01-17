@@ -42,7 +42,7 @@ The following dependencies are required, with preferable versions.
 
 
 ```
-pip install -i https://test.pypi.org/simple/ ecoassocnetwork
+pip install -i https://test.pypi.org/simple/ ecoassocnet==0.0.1
 ``` 
 
 ## Tutorials
