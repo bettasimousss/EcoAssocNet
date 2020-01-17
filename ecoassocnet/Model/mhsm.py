@@ -9,7 +9,7 @@ Edited: October 2019
 
 import tensorflow as tf
 import numpy as np
-tf.set_random_seed(1234)
+tf.compat.v1.set_random_seed(1234)
 np.random.seed(100)
 
 # Multiple Outputs
@@ -140,7 +140,7 @@ def task_specific_logisReg(tf_out,archi_specific,nt,tnames,embed_size,conc=True,
         beta=Dense(embed_size,activation=archi_specific.get("h_activation"),name="env_assoc_weights",kernel_regularizer=reg,use_bias=archi_specific.get('use_bias'))(prevspec)
         betassoc=Model(tf_out.input,beta)
     else:
-        print("Associations are constant in environmental space.")
+        #print("Associations are constant in environmental space.")
         betassoc=None
         
     if (conc): 
