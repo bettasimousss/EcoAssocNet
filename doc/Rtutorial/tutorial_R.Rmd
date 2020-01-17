@@ -1,0 +1,61 @@
+---
+title: "Running EcoAssocNet from R"
+output:
+  html_document:
+    df_print: paged
+---
+
+In the following chunk, changer the root.dir by your current working directory.
+```{r setup}
+knitr::opts_knit$set(root.dir = '~/EcoAssocNet/Source code/')
+```
+
+### Configuration
+First, configure RStudio to use the virtual environments where you installed EcoAssocNet and its dependencies.
+The following command does that, py_config() shows you the version of Python used by reticulate. 
+
+```{r, warning=FALSE}
+library(reticulate)
+use_condaenv("phd")
+py_config()
+```
+
+### Importing ecoassocnet
+We provide the following script which contains bundles functions for performing usual data processing pipelines followed  by the training procedure specific to the proposed framework.
+```{r, warning=FALSE, echo=FALSE}
+source_python("ecoassocnet/run_ecoassoc.py")
+### Or 
+#ea <- import(ecoassocnet.run_ecoassoc)
+```
+
+### Loading and preprocessing data
+```{r, warning=FALSE}
+training_output=run_ecoassoc(folder_data="doc/examples/Aravo/data/",file_env="env.csv",file_count="occur.csv",
+                 training_config_file="doc/examples/Aravo/config/association_learning.ini",
+                 name_dataset="aravo",target="count",
+                 num_vars=c("Slope","PhysD","Snow"),cat_vars=c("Aspect","Form","ZoogD"),
+                num_std="minmax",cat_trt="onehot",
+                 offset_mode="avgnz",verbose=0,
+                 meth="stratified",p=0.8)
+
+model=training_output$model
+data=training_output$data
+metadata=training_output$metadata
+```
+
+### Retrieving and filtering associations
+```{r}
+assoc_mat=model$compute_associations(save=FALSE,norm=TRUE)
+
+selected_assoc_mat=apply_biogeo_filter(assoc_df=assoc_mat,occur=data$occur,weights=model$mle$final_weights,thoccur=0,thass=0.75,thresp=0.5,names=metadata$names)
+```
+
+### Visualization
+```{r}
+util <-import("ecoassocnet.Util.Util")
+### Loading the final association matrix 
+assoc <- read.csv2('doc/examples/Aravo/results/plant_associations.csv',row.names = 1)
+util$plot_association(mat=assoc,fileout='doc/examples/Aravo/results/assoc.pdf')
+util$plot_assoc_clustered(assoc,file='doc/examples/Aravo/results/assoc_clustered.pdf')
+```
+

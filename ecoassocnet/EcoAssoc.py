@@ -7,14 +7,14 @@ Created on Wed May  1 17:22:32 2019
 
 import sys
 sys.path.append("Model")
-from .Model.init_config import init_model_from_paramfile
+from Model.init_config import init_model_from_paramfile
 from sklearn.metrics import accuracy_score, roc_auc_score
 import numpy as np
-from .Model.zie import fit_emb, evaluate_emb
+from Model.zie import fit_emb, evaluate_emb
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from keras.callbacks import TensorBoard
-from .Util.Util import sigmoid, compute_deviance, compute_AIC, plot_archi_hsm#, concat_weights
+from Util.Util import sigmoid, compute_deviance, compute_AIC, plot_archi_hsm#, concat_weights
 from scipy import sparse
 import configparser
 
