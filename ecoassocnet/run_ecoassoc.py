@@ -59,7 +59,7 @@ def run_geoassoc(folder_data,file_env,file_count,training_config_file,
     
     ### Train ###
     print("Training")
-    geoasso_model=GeoAssoc(config=training_config_file,labels=names,name_dataset=name_dataset,target=target)
+    geoasso_model=EcoAssoc(config=training_config_file,labels=names,name_dataset=name_dataset,target=target)
     logg= geoasso_model.train_interaction_model(dataset=dataset['train'],verbose=verbose,init_weights=init_weights.values,offset=offsets)
     perf_hsm, perf_im=geoasso_model.evaluate_model(testdata=dataset['test'])
     
