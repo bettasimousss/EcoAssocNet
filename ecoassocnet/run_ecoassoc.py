@@ -63,7 +63,7 @@ def run_ecoassoc(folder_data,file_env,file_count,training_config_file,
     logg= ecoasso_model.train_interaction_model(dataset=dataset['train'],verbose=verbose,init_weights=init_weights.values,offset=offsets)
     perf_hsm, perf_im=ecoasso_model.evaluate_model(testdata=dataset['test'])
     
-    final_weights=geoasso_model.mle['hsm']
+    final_weights=ecoasso_model.mle['hsm']
     
     weights=np.concatenate([final_weights[i] for i in range(len(final_weights)) if i%2==0],axis=1)
     weights_df=pd.DataFrame(weights.T,columns=prep.covariates.columns.tolist(),index=names)
