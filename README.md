@@ -42,11 +42,11 @@ The following dependencies are required, with preferable versions.
 
 
 ```
-pip install -i https://test.pypi.org/simple/ ecoassocnetworkinf
+pip install -i https://test.pypi.org/simple/ ecoassocnetwork
 ``` 
 
 ## Tutorials
 <p>
-- To run the model from a Python environment: see <href link=https://github.com/SoccoCMOS/EcoAssocNet/blob/master/doc/Pytutorial/md/tutorial.md> Pytutorial </href> </br>
-- To run the model from R: see link=https://github.com/SoccoCMOS/EcoAssocNet/blob/master/doc/Rtutorial/tutorial.md> Pytutorial </href> 
+- To run the model from a Python environment: see <a href link=https://github.com/SoccoCMOS/EcoAssocNet/blob/master/doc/Pytutorial/md/tutorial.md> Pytutorial </a> </br>
+- To run the model from R: see <a href=https://github.com/SoccoCMOS/EcoAssocNet/blob/master/doc/Rtutorial/tutorial_R.rmd> Rtutorial </a> 
 </p>
