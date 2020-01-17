@@ -47,6 +47,6 @@ pip install -i https://test.pypi.org/simple/ ecoassocnetwork
 
 ## Tutorials
 <p>
-- To run the model from a Python environment: see <a href link=https://github.com/SoccoCMOS/EcoAssocNet/blob/master/doc/Pytutorial/md/tutorial.md> Pytutorial </a> </br>
-- To run the model from R: see <a href=https://github.com/SoccoCMOS/EcoAssocNet/blob/master/doc/Rtutorial/tutorial_R.rmd> Rtutorial </a> 
+- To run the model from a Python environment: see <a href link=https://github.com/SoccoCMOS/EcoAssocNet/tree/master/doc/Pytutorial/md/tutorial.md> Pytutorial </a> </br>
+- To run the model from R: see <a href=https://github.com/SoccoCMOS/EcoAssocNet/tree/master/doc/Rtutorial/tutorial_R.rmd> Rtutorial </a> 
 </p>
