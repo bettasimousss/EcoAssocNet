@@ -1,7 +1,7 @@
 # Association Network Inference 
 <p>
 A package for inferring biotic associations from species co-distributions, based on the paper: </br>
-Si-moussi S, Galbrun E, Hedde M, Thuiller W. Inferring biotic associations by learning latent representations of species responses and effects from their co-distributions. Submitted to Methods in Ecology and Evolution. 
+Si-moussi S, Galbrun E, Hedde M, Thuiller W. Inferring bidirectional species associations from environment and co-distributions. Submitted to Methods in Ecology Letters. 
 </p>
 
 ## Abstract
